@@ -70,7 +70,7 @@ class App extends Component {
             myKeyPress={handleKeyPress}
             myCreate={handleCreate}
           />}>
-          <TodoItemList todos={todos} 
+          <TodoItemList  
                         myToggle={handleToggle} 
                         myRemove={handleRemove} />
         </TodoListTemplate>
