@@ -4,16 +4,21 @@ import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 import TodoListTemplate from './components/TodoListTemplate';
 
+const initialTodos = new Array(500).fill(0).map(
+  (item, idx) => ({ id: idx, text: `일정 ${idx}`, checked: true })
+ );
+
 class App extends Component {
   id = 3; // 이미 0,1,2 가 존재하므로 3으로 설정
   //상태변수 선언
   state = {
     todo: '',
-    todos: [
-      { id: 0, text: '리액트 소개', checked: false },
-      { id: 1, text: '리액트 구조', checked: true },
-      { id: 2, text: '리액트 사용', checked: false }
-    ]
+    todos: initialTodos
+    // todos: [
+    //   { id: 0, text: '리액트 소개', checked: false },
+    //   { id: 1, text: '리액트 구조', checked: true },
+    //   { id: 2, text: '리액트 사용', checked: false }
+    // ]
   };
   //Event Handler Method 선언
   handleChange = (e) => {

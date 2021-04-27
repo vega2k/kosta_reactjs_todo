@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './TodoItem.css';
 
 class TodoItem extends Component {
+    //true반환하면 Re렌더링이 되고, false를 반환하면 Re렌더링을 생략한다
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
+
     render() {
         const { text, checked, id, myToggle, myRemove } = this.props;
         return (
